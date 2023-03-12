@@ -1,8 +1,8 @@
-<div class="addComment bg-white shadow-md rounded-xl p-4 mb-4">
+<div class="addComment max-w-2xl mx-auto bg-white shadow-md rounded-xl p-4 mb-4">
   <textarea placeholder="Add a comment..."
     class="w-full h-24 border py-2 px-4 rounded-md resize-none outline-gray-300 mb-2"></textarea>
   <div class="flex justify-between items-center">
-    <img src="../../../assets/images/avatars/image-juliusomo.png" class="w-8" alt="Juliu Somo">
-    <button class="sendBtn bg-sky-700 text-white px-4 py-2 rounded-md">SEND</button>
+    <img [src]="currentUser?.image?.png" class="w-8" alt="Juliu Somo">
+    <button class="sendBtn bg-indigo-900/75 text-white px-4 py-2 rounded-md">SEND</button>
   </div>
 </div>

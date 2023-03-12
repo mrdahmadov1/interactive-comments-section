@@ -10,6 +10,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
 import { CounterComponent } from './components/comments/comment/counter/counter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReplyComponent } from './components/comments/comment/reply/reply.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommentsComponent,
     AddCommentComponent,
     CounterComponent,
+    ReplyComponent,
   ],
   imports: [
     BrowserModule,
