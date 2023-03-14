@@ -11,6 +11,7 @@ import { AddCommentComponent } from './components/add-comment/add-comment.compon
 import { CounterComponent } from './components/comments/comment/counter/counter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReplyComponent } from './components/comments/comment/reply/reply.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { ReplyComponent } from './components/comments/comment/reply/reply.compon
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

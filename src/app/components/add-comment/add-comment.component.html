@@ -1,8 +1,10 @@
 <div class="addComment max-w-2xl mx-auto bg-white shadow-md rounded-xl p-4 mb-4">
-  <textarea placeholder="Add a comment..."
-    class="w-full h-24 border py-2 px-4 rounded-md resize-none outline-gray-300 mb-2"></textarea>
+  <span class="pl-2 text-indigo-900/75 font-semibold">{{replyingTo ? '@' + replyingTo : ''}}</span>
+  <textarea [formControl]="content"
+    class="w-full h-24 border py-2 px-4 rounded-md resize-none outline-indigo-900/50 text-gray-500 mb-2"></textarea>
   <div class="flex justify-between items-center">
-    <img [src]="currentUser?.image?.png" class="w-8" alt="Juliu Somo">
-    <button class="sendBtn bg-indigo-900/75 text-white px-4 py-2 rounded-md">SEND</button>
+    <img [src]="currentUser.image.png" class="w-8" alt="Juliu Somo">
+    <button (click)="submitComment()"
+      class="sendBtn bg-indigo-900/75 hover:bg-indigo-900/50 text-white px-4 py-2 rounded-md">SEND</button>
   </div>
 </div>

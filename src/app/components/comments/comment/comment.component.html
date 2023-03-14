@@ -12,23 +12,30 @@
   </div>
   <div class="comment-footer flex items-center justify-between">
     <counter [score]="comment.score"></counter>
-    <button *ngIf="comment.user.username !== currentUser?.username"
-      class="replyBtn flex items-center gap-1 font-semibold text-indigo-900/75">
+    <button (click)="newReply()" *ngIf="comment.user.username !== currentUser?.username"
+      class="replyBtn flex items-center gap-1 font-semibold text-indigo-900/75 hover:text-indigo-900/50">
       <mat-icon>reply</mat-icon>
       <span>Reply</span>
     </button>
     <div *ngIf="comment.user.username === currentUser?.username" class="replyBtn flex items-center gap-3 font-semibold">
-      <button class="text-red-600/75 flex items-center text-sm">
+      <button (click)="deleteComment(comment)" class="text-red-600/75 hover:text-red-600/50 flex items-center text-sm">
         <mat-icon class="text-base">delete</mat-icon>
         <span>Delete</span>
       </button>
-      <button class="text-indigo-900/75 flex items-center text-sm">
+      <button (click)="editComment(comment)"
+        class="text-indigo-900/75 hover:text-indigo-900/50 flex items-center text-sm">
         <mat-icon class="text-base">edit</mat-icon>
         <span>Edit</span>
       </button>
     </div>
   </div>
 </div>
+
+<!--NEW REPLY-->
+<div *ngIf="isReply">
+  <add-comment (newReply)="newReply()" [replyingTo]="comment.user.username"></add-comment>
+</div>
+
 
 <!--REPLIES-->
 <div class="replies pl-4 border-l-2 sm:pl-5 sm:ml-5 md:pl-7 md:ml-7" *ngIf="comment.replies">

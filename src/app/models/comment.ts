@@ -1,3 +1,5 @@
+import { Reply } from './reply';
+
 export interface Comment {
   id: number;
   content: string;
@@ -10,5 +12,5 @@ export interface Comment {
     };
     username: string;
   };
-  replies: [];
+  replies: Reply[] | [];
 }

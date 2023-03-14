@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { Comment } from 'src/app/models/comment';
 
 @Component({
   selector: 'comments',
@@ -7,17 +8,13 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./comments.component.scss'],
 })
 export class CommentsComponent implements OnInit {
-  comments: Comment[] | undefined;
+  comments: Comment[] = this.dataService.comments;
 
   constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {
-    this.getComments();
-  }
+  ngOnInit(): void {}
 
   getComments() {
-    this.dataService.getData().subscribe((data) => {
-      this.comments = data.comments;
-    });
+    this.comments = this.dataService.getCommentsFromLocalStorage();
   }
 }
