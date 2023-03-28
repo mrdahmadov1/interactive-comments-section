@@ -15,6 +15,7 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {}
 
   getComments() {
+    console.log(this.comments);
     this.comments = this.dataService.getCommentsFromLocalStorage();
   }
 }

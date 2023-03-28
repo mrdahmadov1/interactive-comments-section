@@ -11,7 +11,7 @@
     <p class="text-gray-500 font-medium">{{comment.content}}</p>
   </div>
   <div class="comment-footer flex items-center justify-between">
-    <counter [score]="comment.score"></counter>
+    <counter [countedComment]="comment"></counter>
     <button (click)="newReply()" *ngIf="comment.user.username !== currentUser?.username"
       class="replyBtn flex items-center gap-1 font-semibold text-indigo-900/75 hover:text-indigo-900/50">
       <mat-icon>reply</mat-icon>
